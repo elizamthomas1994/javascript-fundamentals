@@ -34,7 +34,7 @@ describe('Thermostat', () => {
     expect(thermostat.getTemperature()).toBe(25);
   });
 
-  xit ('has a max temperature of 32 when power saving mode is off', () => {
+  it ('has a max temperature of 32 when power saving mode is off', () => {
     const thermostat = new Thermostat();
     thermostat.temperature = 20;
 

@@ -2,6 +2,7 @@ class Thermostat {
 
   constructor(temperature) {
     this.temperature = temperature;
+    this.power_saving_mode = true;
   }
 
   getTemperature() {
@@ -10,18 +11,18 @@ class Thermostat {
 
   setPowerSavingMode(boolean) {
     if (boolean === true) {
-      return 'on';
+      this.power_saving_mode = true;
     } else if (boolean === false) {
-      return "off";
+      this.power_saving_mode = false;
     }
   }
 
   up() {
-    if (this.setPowerSavingMode(true) && this.temperature < 25) {
+    if (this.power_saving_mode === true && this.temperature < 25) {
       return this.temperature += 1;
-    } else if (this.setPowerSavingMode(true) && this.temperature >= 25) {
+    } else if (this.power_saving_mode === true && this.temperature >= 25) {
       return this.temperature;
-    } else if (this.setPowerSavingMode(false) && this.temperature < 32) {
+    } else if (this.power_saving_mode === false && this.temperature < 32) {
       return this.temperature += 1;
     } else {
       return this.temperature;
