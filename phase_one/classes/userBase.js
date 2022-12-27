@@ -1,15 +1,15 @@
 class UserBase {
 
-  constructor(array) {
-    this.array = array;
+  constructor(users) {
+    this.users = users;
   }
   
   count() {
-    return this.array.length;
+    return this.users.length;
   }
   
   getNames() {
-    return this.array.map((object) => {
+    return this.users.map((object) => {
       return object.name
     });
   }
